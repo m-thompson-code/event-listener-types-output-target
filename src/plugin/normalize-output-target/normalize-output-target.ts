@@ -15,7 +15,7 @@ export const normalizeOutputTarget = (config: Config, outputTarget: OutputTarget
         outputPaths: (outputTarget.outputPaths || ["src/component-event-listeners.d.ts", "dist/types/component-event-listeners.d.ts"]).map(
             (outputPath) => (path.isAbsolute(outputPath) ? outputPath : normalizePath(path.join(rootDir, outputPath))),
         ),
-        importPath: outputTarget.importPath ?? "./components",
+        importPath: outputTarget.importPath || "./components",
         excludeComponents: outputTarget.excludeComponents || [],
     };
 };

@@ -1,6 +1,18 @@
+/**
+ * This file has been ported from [@ionic-team/stencil](https://github.com/ionic-team/stencil)
+ * 
+ * https://github.com/ionic-team/stencil/blob/main/src/compiler/types/tests/ComponentCompilerEvent.stub.ts#L10
+ */
+
 import { ComponentCompilerMeta } from "@stencil/core/internal";
 
 /**
+ * This file has been ported from [@ionic-team/stencil](https://github.com/ionic-team/stencil)
+ * 
+ * https://github.com/ionic-team/stencil/blob/main/src/compiler/types/tests/ComponentCompilerEvent.stub.ts#L10
+ * 
+ * -----
+ * 
  * Generates a stub {@link ComponentCompilerMeta}. This function uses sensible defaults for the initial stub. However,
  * any field in the object may be overridden via the `overrides` argument.
  * @param overrides a partial implementation of `ComponentCompilerMeta`. Any provided fields will override the

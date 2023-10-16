@@ -1,5 +1,8 @@
 /**
- * TODO: Mention where these came from and stuff
+ * This file has been ported from [@ionic-team/stencil-ds-output-targets](https://github.com/ionic-team/stencil-ds-output-targets)
+ * 
+ * https://github.com/ionic-team/stencil-ds-output-targets/blob/main/packages/angular-output-target/src/utils.ts
+ * https://github.com/ionic-team/stencil-ds-output-targets/blob/main/packages/angular-output-target/src/output-angular.ts#L39
  */
 
 import { ComponentCompilerMeta } from "@stencil/core/internal";
@@ -8,6 +11,11 @@ const EXTENDED_PATH_REGEX = /^\\\\\?\\/;
 const NON_ASCII_REGEX = /[^\x00-\x80]+/;
 const SLASH_REGEX = /\\/g;
 
+/**
+ * This file has been ported from [@ionic-team/stencil-ds-output-targets](https://github.com/ionic-team/stencil-ds-output-targets)
+ * 
+ * https://github.com/ionic-team/stencil-ds-output-targets/blob/main/packages/angular-output-target/src/utils.ts#L19
+ */
 export function sortBy<T>(array: T[], prop: (item: T) => string): T[] {
     return array.slice().sort((a, b) => {
         const nameA = prop(a);
@@ -18,6 +26,11 @@ export function sortBy<T>(array: T[], prop: (item: T) => string): T[] {
     });
 }
 
+/**
+ * This file has been ported from [@ionic-team/stencil-ds-output-targets](https://github.com/ionic-team/stencil-ds-output-targets)
+ * 
+ * https://github.com/ionic-team/stencil-ds-output-targets/blob/main/packages/angular-output-target/src/utils.ts#L29
+ */
 export function normalizePath(str: string): string {
     // Convert Windows backslash paths to slash paths: foo\\bar ➔ foo/bar
     // https://github.com/sindresorhus/slash MIT
@@ -49,6 +62,11 @@ export function normalizePath(str: string): string {
     return str;
 }
 
+/**
+ * This file has been ported from [@ionic-team/stencil-ds-output-targets](https://github.com/ionic-team/stencil-ds-output-targets)
+ * 
+ * https://github.com/ionic-team/stencil-ds-output-targets/blob/main/packages/angular-output-target/src/output-angular.ts#L39
+ */
 export function getFilteredComponents(excludeComponents: string[] = [], cmps: ComponentCompilerMeta[]): ComponentCompilerMeta[] {
     return sortBy(cmps, (cmp) => cmp.tagName).filter((c) => !excludeComponents.includes(c.tagName) && !c.internal);
 }
