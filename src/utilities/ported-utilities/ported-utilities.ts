@@ -18,6 +18,7 @@ const SLASH_REGEX = /\\/g;
  * https://github.com/ionic-team/stencil-ds-output-targets/blob/main/packages/angular-output-target/src/utils.ts#L19
  */
 export function sortBy<T>(array: T[], prop: (item: T) => string): T[] {
+  // test
   return array.slice().sort((a, b) => {
     const nameA = prop(a);
     const nameB = prop(b);
