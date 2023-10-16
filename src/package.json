@@ -1,6 +1,6 @@
 {
   "name": "event-listener-types-output-target",
-  "version": "0.3.0",
+  "version": "1.0.0",
   "main": "index.js",
   "types": "index.d.ts",
   "description": "Event listener types output target for @stencil/core components.",
