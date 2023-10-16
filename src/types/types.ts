@@ -6,8 +6,7 @@ export interface NormalizedOutputTargetStrictEventListeners {
    *
    * ```
    * [
-   *   'src/component-event-listeners.d.ts',
-   *   'dist/types/component-event-listeners.d.ts',
+   *   'src/component-event-listeners.d.ts'
    * ]
    * ```
    */

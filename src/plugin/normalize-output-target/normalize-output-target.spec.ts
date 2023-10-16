@@ -21,7 +21,7 @@ describe('normalizeOutputTarget', () => {
 
   it('should provide default values for output target', () => {
     const expectedResult: NormalizedOutputTargetStrictEventListeners = {
-      outputPaths: [`${mockRootDir}/src/component-event-listeners.d.ts`, `${mockRootDir}/dist/types/component-event-listeners.d.ts`],
+      outputPaths: [`${mockRootDir}/src/component-event-listeners.d.ts`],
       importPath: './components',
       excludeComponents: [],
     };

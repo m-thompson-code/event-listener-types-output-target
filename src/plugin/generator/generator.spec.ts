@@ -17,7 +17,7 @@ describe('generator', () => {
     const outputTarget: NormalizedOutputTargetStrictEventListeners = {
       excludeComponents: [],
       importPath: './components',
-      outputPaths: ['src/component-event-listeners.d.ts', 'dist/types/component-event-listeners.d.ts'],
+      outputPaths: ['src/component-event-listeners.d.ts'],
     };
 
     const components = [stubComponentCompilerMeta({ events: [stubComponentCompilerEvent()] })];
@@ -55,7 +55,6 @@ describe('generator', () => {
 
     generator(outputTarget, compilerCtx, buildCtx).then(() => {
       expect(directory['src/component-event-listeners.d.ts']).toBe(expectedOutput);
-      expect(directory['dist/types/component-event-listeners.d.ts']).toBe(expectedOutput);
       done();
     });
   });
@@ -64,7 +63,7 @@ describe('generator', () => {
     const outputTarget: NormalizedOutputTargetStrictEventListeners = {
       excludeComponents: ['first-cmp'],
       importPath: './components',
-      outputPaths: ['src/component-event-listeners.d.ts', 'dist/types/component-event-listeners.d.ts'],
+      outputPaths: ['src/component-event-listeners.d.ts'],
     };
 
     const components = [
@@ -105,7 +104,6 @@ describe('generator', () => {
 
     generator(outputTarget, compilerCtx, buildCtx).then(() => {
       expect(directory['src/component-event-listeners.d.ts']).toBe(expectedOutput);
-      expect(directory['dist/types/component-event-listeners.d.ts']).toBe(expectedOutput);
       done();
     });
   });
@@ -114,7 +112,7 @@ describe('generator', () => {
     const outputTarget: NormalizedOutputTargetStrictEventListeners = {
       excludeComponents: [],
       importPath: './components',
-      outputPaths: ['src/component-event-listeners.d.ts', 'dist/types/component-event-listeners.d.ts'],
+      outputPaths: ['src/component-event-listeners.d.ts'],
     };
 
     const components = [
@@ -155,7 +153,6 @@ describe('generator', () => {
 
     generator(outputTarget, compilerCtx, buildCtx).then(() => {
       expect(directory['src/component-event-listeners.d.ts']).toBe(expectedOutput);
-      expect(directory['dist/types/component-event-listeners.d.ts']).toBe(expectedOutput);
       done();
     });
   });
