@@ -47,12 +47,6 @@ describe('normalizeOutputTarget', () => {
   });
 
   it('should throw error if config is missing rootDir', () => {
-    const expectedResult: NormalizedOutputTargetStrictEventListeners = {
-      outputPaths: [`mock/absolute/path/output.d.ts`, `${mockRootDir}/mock/relative/path/output.d.ts`],
-      importPath: './components',
-      excludeComponents: [],
-    };
-
     jest.spyOn(path, 'isAbsolute').mockReturnValueOnce(true);
     jest.spyOn(path, 'isAbsolute').mockReturnValueOnce(false);
 

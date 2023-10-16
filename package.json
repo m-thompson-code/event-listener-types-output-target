@@ -35,7 +35,7 @@
   "license": "MIT",
   "scripts": {
     "prepare": "husky install",
-    "lint": "eslint . --max-warnings=0 --fix",
+    "lint": "eslint . --ext js,ts --max-warnings=0 --fix",
     "format": "prettier . --write",
     "copy": "cp src/package.json dist/ && cp README.md dist/",
     "build": "rimraf ./dist && tsc && npm run copy",

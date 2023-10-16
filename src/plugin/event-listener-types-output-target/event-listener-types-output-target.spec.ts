@@ -41,7 +41,8 @@ describe('eventListenerTypesOutputTarget', () => {
     const mockCompilerCtx = {} as CompilerCtx;
     const mockBuildCtx = stubBuildCtx([]);
     const mockTimespan = {
-      finish: (arg: string) => {
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      finish: (_arg: string) => {
         /** stub */
       },
     } as LoggerTimeSpan;

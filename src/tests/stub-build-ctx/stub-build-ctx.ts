@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { BuildCtx, ComponentCompilerMeta, LoggerTimeSpan } from '@stencil/core/internal';
 
 export const stubBuildCtx = (components: ComponentCompilerMeta[]): BuildCtx => {

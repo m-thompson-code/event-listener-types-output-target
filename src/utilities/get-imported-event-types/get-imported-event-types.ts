@@ -6,7 +6,7 @@ export const getImportedEventTypes = (cmp: ComponentCompilerMeta): string[] => {
     cmp.events
       .map(event =>
         Object.entries(event.complexType.references)
-          .filter(([type, typeReference]) => typeReference.location === 'import')
+          .filter(([, typeReference]) => typeReference.location === 'import')
           .map(([type]) => type),
       )
       .flat(),

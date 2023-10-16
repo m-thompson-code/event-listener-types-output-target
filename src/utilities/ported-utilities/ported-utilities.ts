@@ -8,6 +8,7 @@
 import { ComponentCompilerMeta } from '@stencil/core/internal';
 
 const EXTENDED_PATH_REGEX = /^\\\\\?\\/;
+// eslint-disable-next-line no-control-regex
 const NON_ASCII_REGEX = /[^\x00-\x80]+/;
 const SLASH_REGEX = /\\/g;
 
