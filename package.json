@@ -1,0 +1,31 @@
+{
+  "name": "output-event-listeners-types",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "types": "dist/types/index.d.ts",
+  "scripts": {
+    "build": "rimraf ./dist && tsc",
+    "start": "node dist/index.js",
+    "test": "jest",
+    "test.watch": "jest --watchAll"
+  },
+  "author": "",
+  "license": "ISC",
+  "peerDependencies": {
+    "@stencil/core": ">=2.0.0 || >=3 || >= 4.0.0-beta.0 || >= 4.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.23.2",
+    "@babel/preset-env": "^7.23.2",
+    "@babel/preset-typescript": "^7.23.2",
+    "@stencil/core": "^4.4.0",
+    "@types/jest": "^29.5.5",
+    "@types/node": "^20.8.6",
+    "babel-jest": "^29.7.0",
+    "jest": "^29.7.0",
+    "rimraf": "^5.0.5",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.2.2"
+  }
+}

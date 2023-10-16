@@ -1,0 +1,9 @@
+node_modules/
+dist/
+build/
+coverage/
+*.swp
+.DS_Store
+.idea/
+.npmrc
+*.tgz

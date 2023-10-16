@@ -1,0 +1,33 @@
+{
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "sourceMap": true,
+    "allowSyntheticDefaultImports": true,
+    "allowUnreachableCode": false,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "declaration": true,
+    "experimentalDecorators": true,
+    "lib": [
+      "dom",
+      "ES2022",
+      "esnext.array"
+    ],
+    "moduleResolution": "node",
+    "module": "esnext",
+    "target": "ES2022",
+    "noUnusedLocals": true,
+    "noUnusedParameters": false,
+    "outDir": "dist"
+  },
+  "files": [
+    "src/index.ts"
+  ],
+  "include": [
+    "src/**/*.d.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "src/tests"
+  ]
+}
