@@ -26,8 +26,4 @@ describe('generateHTMLElementTagNameMap', () => {
             `${TABS[1]}}`,
         ].join('\n'));
     });
-
-    it('should return empty string if no components', () => {
-        expect(generateHTMLElementTagNameMap([])).toBe('');
-    });
 });

@@ -14,7 +14,7 @@
       "esnext.array"
     ],
     "moduleResolution": "node",
-    "module": "esnext",
+    "module": "CommonJS",
     "target": "ES2022",
     "noUnusedLocals": true,
     "noUnusedParameters": false,

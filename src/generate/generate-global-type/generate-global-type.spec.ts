@@ -63,8 +63,4 @@ describe("generateGlobalType", () => {
             '}'
         ].join('\n'));
     });
-
-    it("should return an empty string for no components", () => {
-        expect(generateGlobalType([])).toBe('');
-    });
 });

@@ -8,7 +8,7 @@ export const generateTypes = (cmps: ComponentCompilerMeta[], importPath: string)
     const comments = generateComments();
 
     if (!cmps.length) {
-        return comments;
+        return `${comments}\n`;
     }
 
     const imports = generateStencilEventTypeImport(cmps, importPath);
@@ -17,8 +17,12 @@ export const generateTypes = (cmps: ComponentCompilerMeta[], importPath: string)
     
     return [
         comments,
-        ...(imports ? [imports, ''] : []),
-        ...(eventMaps ? [eventMaps, ''] : []),
-        ...(globalTypes ? [globalTypes, ''] : []),
+        '',
+        imports,
+        '',
+        eventMaps,
+        '',
+        globalTypes,
+        '',
     ].join('\n');
 };

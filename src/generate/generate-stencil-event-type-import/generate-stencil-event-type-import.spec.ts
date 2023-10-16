@@ -35,19 +35,4 @@ describe('generateStencilEventTypeImport', () => {
             `} from '${customPath}';`,
         ].join('\n'));
     });
-
-    it('should not generate imports for components without events', () => {
-        expect(generateStencilEventTypeImport([
-            stubComponentCompilerMeta({ tagName: 'first-cmp' }),
-            stubComponentCompilerMeta({ tagName: 'second-cmp', events: [stubComponentCompilerEvent()] }),
-        ], './components')).toBe([
-            'import {',
-            `${TABS[1]}SecondCmpCustomEvent,`,
-            "} from './components';",
-        ].join('\n'));
-    });
-
-    it('should not generate an import if no components', () => {
-        expect(generateStencilEventTypeImport([], './components')).toBe('');
-    });
 });

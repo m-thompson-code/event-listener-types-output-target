@@ -7,7 +7,7 @@ jest.mock("../generate-comments", () => {
     return {
         generateComments: () => {
             return mockGenerateComments.mockImplementation(
-                () => `/** stub comments */\n`,
+                () => `/** stub comments */`,
             )();
         },
     };
@@ -59,42 +59,6 @@ describe("generateTypes", () => {
             'interface MockGeneratedEventMaps {/** mock stub-cmp */}',
             '',
             'declare global {/** stub stub-cmp */}',
-            '',
-        ].join('\n'));
-    });
-
-    it("should exclude imports if there are no imports", () => {
-        mockGenerateStencilEventTypeImport.mockReturnValueOnce('');
-        const components = [stubComponentCompilerMeta()]
-        expect(generateTypes(components, 'some-import-path')).toBe([
-            '/** stub comments */',
-            '',
-            'interface MockGeneratedEventMaps {/** mock stub-cmp */}',
-            '',
-            'declare global {/** stub stub-cmp */}',
-            '',
-        ].join('\n'));
-    });
-
-    it("should exclude event maps if there are no event maps", () => {
-        mockGenerateStencilEventTypeImport.mockReturnValueOnce('');
-        mockGenerateEventMaps.mockReturnValueOnce('');
-        const components = [stubComponentCompilerMeta()]
-        expect(generateTypes(components, 'some-import-path')).toBe([
-            '/** stub comments */',
-            '',
-            'declare global {/** stub stub-cmp */}',
-            '',
-        ].join('\n'));
-    });
-
-    it("should exclude global types if there are no global types", () => {
-        mockGenerateStencilEventTypeImport.mockReturnValueOnce('');
-        mockGenerateEventMaps.mockReturnValueOnce('');
-        mockGenerateGlobalType.mockReturnValueOnce('');
-        const components = [stubComponentCompilerMeta()]
-        expect(generateTypes(components, 'some-import-path')).toBe([
-            '/** stub comments */',
             '',
         ].join('\n'));
     });

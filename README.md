@@ -1,1 +1,1 @@
-# output-event-listeners-types
+# output-event-listener-types

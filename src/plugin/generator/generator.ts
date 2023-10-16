@@ -1,7 +1,7 @@
 import type { BuildCtx, CompilerCtx } from "@stencil/core/internal";
 import type { NormalizedOutputTargetStrictEventListeners } from "../../types";
 import { generateTypes } from "../../generate";
-import { getFilteredComponents } from "../../utilities";
+import { getFilteredComponents, filterComponentsWithEvents } from "../../utilities";
 
 export const generator = async (
     outputTarget: NormalizedOutputTargetStrictEventListeners,
@@ -10,7 +10,9 @@ export const generator = async (
 ): Promise<void> => {
     const timespan = buildCtx.createTimeSpan(`generate strict event listeners started`, true);
 
-    const components = getFilteredComponents(outputTarget.excludeComponents, buildCtx.components);
+    const components = getFilteredComponents(outputTarget.excludeComponents, filterComponentsWithEvents(buildCtx.components));
+
+    console.log(components.map(cmp => cmp.events.map(event => event.complexType.original)));
 
     const types = generateTypes(components, outputTarget.importPath);
 

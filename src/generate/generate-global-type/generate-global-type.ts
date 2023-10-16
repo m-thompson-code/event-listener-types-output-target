@@ -3,10 +3,6 @@ import { generateHTMLElementTagNameMap } from "../generate-html-element-tag-name
 import { generateHTMLElementType } from "../generate-html-element-type";
 
 export const generateGlobalType = (cmps: ComponentCompilerMeta[]): string => {
-    if (!cmps.length) {
-        return '';
-    }
-    
     return [
         `declare global {`,
         ...cmps.map(cmp => `${generateHTMLElementType(cmp)}\n`),

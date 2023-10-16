@@ -9,49 +9,13 @@ jest.mock("../../generate/generate-comments", () => {
     return {
         generateComments: () => {
             return mockGenerateComments.mockImplementation(
-                () => `/** stub comments */\n`,
+                () => `/** stub comments */`,
             )();
         },
     };
 });
 
 describe('generator', () => {
-    it('should generate basic global types for components without events', (done) => {
-        const outputTarget: NormalizedOutputTargetStrictEventListeners = {
-            excludeComponents: [],
-            importPath: './components',
-            outputPaths: ["src/component-event-listeners.d.ts", "dist/types/component-event-listeners.d.ts"],
-        };
-
-        const components = [
-            stubComponentCompilerMeta(),
-        ];
-
-        const buildCtx = stubBuildCtx(components);
-
-        const [directory, compilerCtx] = stubCompilerCtx();
-
-        const expectedOutput = [
-            '/** stub comments */',
-            '',
-            'declare global {',
-            `${TABS[1]}interface HTMLStubCmpElement {`,
-            `${TABS[1]}}`,
-            '',
-            `${TABS[1]}interface HTMLElementTagNameMap {`,
-            `${TABS[2]}"stub-cmp": HTMLStubCmpElement;`,
-            `${TABS[1]}}`,
-            '}',
-            '',
-        ].join('\n');
-
-        generator(outputTarget, compilerCtx, buildCtx).then(() => {
-            expect(directory["src/component-event-listeners.d.ts"]).toBe(expectedOutput);
-            expect(directory["dist/types/component-event-listeners.d.ts"]).toBe(expectedOutput);
-            done();
-        });
-    });
-
     it('should generate event listener global types for components with events', (done) => {
         const outputTarget: NormalizedOutputTargetStrictEventListeners = {
             excludeComponents: [],

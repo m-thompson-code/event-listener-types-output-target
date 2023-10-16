@@ -54,19 +54,4 @@ describe("generateEventMaps", () => {
             "}"
         ].join('\n'));
     });
-
-    it("should not generate event maps for components without events", () => {
-        expect(generateEventMaps([
-            stubComponentCompilerMeta({tagName: 'first-cmp', events: [stubComponentCompilerEvent()] }),
-            stubComponentCompilerMeta({tagName: 'second-cmp' }),
-        ])).toBe([
-            'interface HTMLFirstCmpElementEventMap {',
-            `${TABS[1]}stubEvent: StubEvent`,
-            "}"
-        ].join('\n'));
-    });
-
-    it("should return empty string if no components", () => {
-        expect(generateEventMaps([])).toBe('');
-    });
 });
