@@ -1,3 +1,3 @@
 export const removeDuplicates = <T>(values: T[]) => {
-    return [...new Set(values)];
+  return [...new Set(values)];
 };

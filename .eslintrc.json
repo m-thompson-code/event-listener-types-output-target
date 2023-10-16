@@ -1,0 +1,9 @@
+{
+  "root": true,
+  "ignorePatterns": ["**/*"],
+  "extends": ["eslint:recommended", "plugin:@typescript-eslint/recommended", "prettier"],
+  "parser": "@typescript-eslint/parser",
+  "env": {
+    "es6": true
+  }
+}

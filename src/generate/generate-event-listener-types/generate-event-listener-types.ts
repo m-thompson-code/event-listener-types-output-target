@@ -9,15 +9,13 @@ import { dashToPascalCase } from '../../utilities';
  * @param cmp The component compiler metadata
  * @returns additional types information to add event listener method overloads for component's html element type
  */
-export const generateEventListenerTypes = (
-  cmp: ComponentCompilerMeta,
-): { htmlElementEventMap: string[]; htmlElementEventListenerProperties: string[] } => {
+export const generateEventListenerTypes = (cmp: ComponentCompilerMeta): { htmlElementEventMap: string[]; htmlElementEventListenerProperties: string[] } => {
   const tagName = cmp.tagName.toLowerCase();
   const tagNameAsPascal = dashToPascalCase(tagName);
   const htmlElementName = `HTML${tagNameAsPascal}Element`;
   const cmpEventInterface = `${tagNameAsPascal}CustomEvent`;
   const htmlElementEventMapName = `${htmlElementName}EventMap`;
-  const cmpEvents = cmp.events.filter((cmpEvent) => cmpEvent.complexType.original);
+  const cmpEvents = cmp.events.filter(cmpEvent => cmpEvent.complexType.original);
   if (!cmpEvents.length) {
     return { htmlElementEventMap: [], htmlElementEventListenerProperties: [] };
   }
@@ -42,11 +40,8 @@ export const generateEventListenerTypes = (
  * @param htmlElementEventMapName the name of the component event map type
  * @returns map of event names and user user implemented event type(s)
  */
-const getHtmlElementEventMap = (
-  cmpEvents: ComponentCompilerEvent[],
-  htmlElementEventMapName: string,
-): string[] => {
-  const eventMapProperties = cmpEvents.map((cmpEvent) => {
+const getHtmlElementEventMap = (cmpEvents: ComponentCompilerEvent[], htmlElementEventMapName: string): string[] => {
+  const eventMapProperties = cmpEvents.map(cmpEvent => {
     return `${TABS[1]}"${cmpEvent.name}": ${cmpEvent.complexType.original};`;
   });
   return [`interface ${htmlElementEventMapName} {`, ...eventMapProperties, `}`];

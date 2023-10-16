@@ -8,11 +8,7 @@
     "strict": true,
     "declaration": true,
     "experimentalDecorators": true,
-    "lib": [
-      "dom",
-      "ES2022",
-      "esnext.array"
-    ],
+    "lib": ["dom", "ES2022", "esnext.array"],
     "moduleResolution": "node",
     "module": "CommonJS",
     "target": "ES2022",
@@ -20,14 +16,7 @@
     "noUnusedParameters": false,
     "outDir": "dist"
   },
-  "files": [
-    "src/index.ts"
-  ],
-  "include": [
-    "src/**/*.d.ts"
-  ],
-  "exclude": [
-    "node_modules",
-    "src/tests"
-  ]
+  "files": ["src/index.ts"],
+  "include": ["src/**/*.d.ts"],
+  "exclude": ["node_modules", "src/tests"]
 }

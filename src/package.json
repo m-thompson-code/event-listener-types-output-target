@@ -1,36 +1,41 @@
 {
-    "name": "event-listener-types-output-target",
-    "version": "0.3.0",
-    "main": "index.js",
-    "types": "index.d.ts",
-    "description": "Event listener types output target for @stencil/core components.",
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/m-thompson-code/event-listener-types-output-target.git"
-    },
-    "author": {
-        "name": "Mark Thompson",
-        "email": "m-thompson-code@gmail.com",
-        "web": "https://github.com/m-thompson-code"
-    },
-    "bugs": {
-        "url": "https://github.com/m-thompson-code/event-listener-types-output-target/issues"
-    },
-    "keywords": [
-        "stencil",
-        "ionic",
-        "typescript",
-        "angular",
-        "event",
-        "output",
-        "event listeners",
-        "web components"
-    ],
-    "license": "MIT",
-    "scripts": {
-        "start": "node index.js"
-    },
-    "peerDependencies": {
-        "@stencil/core": ">=2.0.0 || >=3 || >= 4.0.0-beta.0 || >= 4.0.0"
-    }
+  "name": "event-listener-types-output-target",
+  "version": "0.3.0",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "description": "Event listener types output target for @stencil/core components.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/m-thompson-code/event-listener-types-output-target.git"
+  },
+  "author": {
+    "name": "Mark Thompson",
+    "email": "m-thompson-code@gmail.com",
+    "web": "https://github.com/m-thompson-code"
+  },
+  "bugs": {
+    "url": "https://github.com/m-thompson-code/event-listener-types-output-target/issues"
+  },
+  "keywords": [
+    "stencil",
+    "ionic",
+    "typescript",
+    "angular",
+    "react",
+    "vue",
+    "ember",
+    "javascript",
+    "event",
+    "output",
+    "event listeners",
+    "web components",
+    "custom elements"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "peerDependencies": {
+    "@stencil/core": ">=2.0.0 || >=3 || >= 4.0.0-beta.0 || >= 4.0.0"
+  }
 }

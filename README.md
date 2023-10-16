@@ -5,9 +5,9 @@ Stencil components currently don't generate event listener types which can make 
 ```ts
 const myComponent = document.createElement('my-component');
 
-myComponent.addEventListener('my-event', (event) => {
-    // TypeError: Property 'detail' does not exist on type 'Event'
-    event.detail;
+myComponent.addEventListener('my-event', event => {
+  // TypeError: Property 'detail' does not exist on type 'Event'
+  event.detail;
 });
 ```
 
@@ -16,9 +16,9 @@ This target output generates additional types to make events type safe:
 ```ts
 const myComponent = document.createElement('my-component');
 
-myComponent.addEventListener('my-event', (event) => {
-    // event is now of type MyComponentCustomEvent, and detail will have the proper type
-    event.detail;
+myComponent.addEventListener('my-event', event => {
+  // event is now of type MyComponentCustomEvent, and detail will have the proper type
+  event.detail;
 });
 ```
 
@@ -26,14 +26,14 @@ This will also allow components to have proper Output binding types in Angular p
 
 ```ts
 @Component({
-    selector: 'app-root',
-    template: `<my-component (my-event)="handleMyEvent($event)" />`,
+  selector: 'app-root',
+  template: `<my-component (my-event)="handleMyEvent($event)" />`,
 })
 export class AppComponent {
-    handleMyEvent(event: MyComponentCustomEvent<string>) {
-        // event is property typed now and can be consumed without needing to type `event` as Event or any then use type assertion to its proper type
-        event.detail;
-    }
+  handleMyEvent(event: MyComponentCustomEvent<string>) {
+    // event is property typed now and can be consumed without needing to type `event` as Event or any then use type assertion to its proper type
+    event.detail;
+  }
 }
 ```
 
@@ -50,11 +50,11 @@ import { Config } from '@stencil/core';
 import { outputEventListenerTypes } from 'output-event-listener-types';
 
 export const config: Config = {
+  // ...
+  outputTargets: [
     // ...
-    outputTargets: [
-        // ...
-        outputEventListenerTypes(),
-    ],
+    outputEventListenerTypes(),
+  ],
 };
 ```
 
@@ -70,29 +70,26 @@ import { Config } from '@stencil/core';
 import { outputEventListenerTypes } from 'output-event-listener-types';
 
 export const config: Config = {
+  // ...
+  outputTargets: [
     // ...
-    outputTargets: [
-        // ...
-        outputEventListenerTypes({
-            outputPaths: ['some/custom/path/component-event-listeners.d.ts'],
-        }),
-    ],
+    outputEventListenerTypes({
+      outputPaths: ['some/custom/path/component-event-listeners.d.ts'],
+    }),
+  ],
 };
 ```
 
 ## Output Target Options
 
 1. `outputPaths` - Paths where generated event listener types will be stored. Path should include filename. Default if not defined is:
-    ```ts
-    [
-        'src/component-event-listeners.d.ts',
-        'dist/types/component-event-listeners.d.ts',
-    ];
-    ```
+   ```ts
+   ['src/component-event-listeners.d.ts', 'dist/types/component-event-listeners.d.ts'];
+   ```
 2. `importPath` - The generated event listener types depend on types from `components.d.ts`. Setting this will define the path where those types will be imported from. Default if not defined is:
-    ```ts
-    './components'
-    ```
+   ```ts
+   './components';
+   ```
 3. `excludeComponents` - List of components to not generate event listener types. Values should be the tag name of the component.
 
 # Development
