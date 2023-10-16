@@ -126,5 +126,5 @@ For development, code changes are lint/formatted on commit. New features should 
 ```bash
 npm i # Install dependencies
 npm run test # Run unit tests
-npm run test.watch i # Run unit tests in watch mode
+npm run test.watch # Run unit tests in watch mode
 ```
