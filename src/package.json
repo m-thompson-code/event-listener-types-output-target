@@ -1,12 +1,12 @@
 {
-    "name": "listener-types-output-target",
+    "name": "event-listener-types-output-target",
     "version": "0.3.0",
     "main": "index.js",
     "types": "index.d.ts",
     "description": "Event listener types output target for @stencil/core components.",
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/m-thompson-code/listener-types-output-target.git"
+        "url": "git+https://github.com/m-thompson-code/event-listener-types-output-target.git"
     },
     "author": {
         "name": "Mark Thompson",
@@ -14,7 +14,7 @@
         "web": "https://github.com/m-thompson-code"
     },
     "bugs": {
-        "url": "https://github.com/m-thompson-code/listener-types-output-target/issues"
+        "url": "https://github.com/m-thompson-code/event-listener-types-output-target/issues"
     },
     "keywords": [
         "stencil",
