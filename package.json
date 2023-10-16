@@ -65,7 +65,7 @@
     "typescript": "^5.2.2"
   },
   "lint-staged": {
-    "*.ts ": "eslint --fix --max-warnings=0",
+    "*.ts": "eslint --fix --max-warnings=0",
     "*.{ts,md}": "prettier --write"
   }
 }
