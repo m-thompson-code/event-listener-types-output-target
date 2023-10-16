@@ -1,4 +1,8 @@
-# Summary
+# event-listener-types-output-target
+
+[Stencil](https://github.com/ionic-team/stencil) [output target](https://stenciljs.com/docs/output-targets) to generate event listener types
+
+## Summary
 
 Stencil components currently don't generate event listener types which can make consuming Stencil components difficult when wanting to add an event listener in a TypeScript project:
 
@@ -37,13 +41,24 @@ export class AppComponent {
 }
 ```
 
-# How to Use
+## How to use
+
+To export event listener types:
+
+1. [Install `event-listener-types-output-target`](#install-event-listener-types-output-target)
+2. [Update Stencil config to include `eventListenerTypesOutputTarget`](#update-stencil-config)
+3. [Add `component-event-listeners.d.ts` export in dist directory](#update-types-export-in-dist)
+
+### Install event-listener-types-output-target
 
 ```bash
 npm i -D event-listener-types-output-target
 ```
 
-Update your stencil config to use this output target:
+### Update Stencil config
+
+By default the Stencil config will be located at `stencil.config.ts`.
+Update your Stencil config to use this output target:
 
 ```ts
 import { Config } from '@stencil/core';
@@ -80,7 +95,19 @@ export const config: Config = {
 };
 ```
 
-## Output Target Options
+### Update types export in dist
+
+Include the generated `component-event-listeners.d.ts` to your `dist` by updating the following file found at `dist/types/index.d.ts`:
+
+```ts
+export * from './components';
+export * from './component-event-listeners'; // <-- add this line
+// ...
+```
+
+### Output target options
+
+For more custom behavior such as changing the `outputPaths` to customize where the generated types files are saved, there are two other options:
 
 1. `outputPaths` - Paths where generated event listener types will be stored. Path should include filename. Default if not defined is:
    ```ts
@@ -92,7 +119,9 @@ export const config: Config = {
    ```
 3. `excludeComponents` - List of components to not generate event listener types. Values should be the tag name of the component.
 
-# Development
+## Development
+
+For development, code changes are lint/formatted on commit. New features should come with new tests.
 
 ```bash
 npm i # Install dependencies
