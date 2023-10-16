@@ -4,7 +4,7 @@
  * https://github.com/ionic-team/stencil-ds-output-targets/blob/main/packages/angular-output-target/src/utils.ts
  * https://github.com/ionic-team/stencil-ds-output-targets/blob/main/packages/angular-output-target/src/output-angular.ts#L39
  */
-
+const moo = 'cow';
 import { ComponentCompilerMeta } from '@stencil/core/internal';
 
 const EXTENDED_PATH_REGEX = /^\\\\\?\\/;
