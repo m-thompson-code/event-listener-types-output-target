@@ -12,8 +12,6 @@ export const generator = async (
 
     const components = getFilteredComponents(outputTarget.excludeComponents, filterComponentsWithEvents(buildCtx.components));
 
-    console.log(components.map(cmp => cmp.events.map(event => event.complexType.original)));
-
     const types = generateTypes(components, outputTarget.importPath);
 
     await Promise.all(outputTarget.outputPaths.map((outputPath) => compilerCtx.fs.writeFile(outputPath, types)));

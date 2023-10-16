@@ -3,7 +3,7 @@ import type { OutputTargetStrictEventListeners, NormalizedOutputTargetStrictEven
 import { normalizeOutputTarget } from "../normalize-output-target";
 import { generator } from "../generator";
 
-export const outputEventListenerTypes = (outputTarget: OutputTargetStrictEventListeners = {}): OutputTargetCustom => {
+export const eventListenerTypesOutputTarget = (outputTarget: OutputTargetStrictEventListeners = {}): OutputTargetCustom => {
     let validatedOutputTarget: NormalizedOutputTargetStrictEventListeners;
 
     return {

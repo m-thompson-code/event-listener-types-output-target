@@ -1,4 +1,4 @@
-import { outputEventListenerTypes } from "./output-event-listener-types";
+import { eventListenerTypesOutputTarget } from "./event-listener-types-output-target";
 import { NormalizedOutputTargetStrictEventListeners } from "../../types";
 import { Config } from "@stencil/core";
 import { BuildCtx, CompilerCtx, LoggerTimeSpan } from "@stencil/core/internal";
@@ -20,14 +20,14 @@ jest.mock("../generator", () => {
 
 const outputTargetName = "strict event listener types";
 
-describe("outputEventListenerTypes", () => {
+describe("eventListenerTypesOutputTarget", () => {
     afterEach(() => {
         jest.clearAllMocks();
         jest.restoreAllMocks();
     });
 
     it("should return an output target", () => {
-        expect(outputEventListenerTypes()).toStrictEqual({
+        expect(eventListenerTypesOutputTarget()).toStrictEqual({
             type: "custom",
             name: outputTargetName,
             validate: expect.any(Function),
@@ -55,7 +55,7 @@ describe("outputEventListenerTypes", () => {
         mockGenerator.mockReturnValueOnce(Promise.resolve());
 
         // Create output target to start tests
-        const outputTarget = outputEventListenerTypes();
+        const outputTarget = eventListenerTypesOutputTarget();
 
         // Test outputTarget.validate()
         expect(mockNormalizeOutputTarget).toHaveBeenCalledTimes(0);

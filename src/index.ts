@@ -1,1 +1,1 @@
-export { outputEventListenerTypes } from "./plugin";
+export { eventListenerTypesOutputTarget } from "./plugin";
