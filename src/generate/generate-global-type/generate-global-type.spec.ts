@@ -1,11 +1,11 @@
 import { ComponentCompilerMeta } from '@stencil/core/internal';
 import { generateGlobalType } from './generate-global-type';
-import { getComponentTypes } from '../../utilities';
+import { getGeneralComponentTypes } from '../../utilities';
 import { TABS } from '../../consts';
 import { stubComponentCompilerMeta } from '../../tests';
 
 const mockGenerateHTMLElementType_ = (cmp: ComponentCompilerMeta): string => {
-  return [`${TABS[1]}interface ${getComponentTypes(cmp).htmlElementName} {`, `${TABS[2]}stubHTMLElementProp: StubHTMLElementPropType`, `${TABS[1]}}`].join('\n');
+  return [`${TABS[1]}interface ${getGeneralComponentTypes(cmp).htmlElementName} {`, `${TABS[2]}stubHTMLElementProp: StubHTMLElementPropType`, `${TABS[1]}}`].join('\n');
 };
 
 const mockGenerateHTMLElementType = jest.fn();

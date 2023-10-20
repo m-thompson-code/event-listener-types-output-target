@@ -1,9 +1,9 @@
-import { getComponentTypes } from './get-component-types';
+import { getGeneralComponentTypes } from './get-general-component-types';
 import { stubComponentCompilerMeta } from '../../tests';
 
-describe('getComponentTypes', () => {
-  it('should generate common type names for component', () => {
-    expect(getComponentTypes(stubComponentCompilerMeta())).toStrictEqual({
+describe('getGeneralComponentTypes', () => {
+  it('should generate general type names for component', () => {
+    expect(getGeneralComponentTypes(stubComponentCompilerMeta())).toStrictEqual({
       tagName: 'stub-cmp',
       tagNameAsPascal: 'StubCmp',
       htmlElementName: 'HTMLStubCmpElement',

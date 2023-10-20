@@ -21,7 +21,8 @@ This target output generates additional types to make events type safe:
 const myComponent = document.createElement('my-component');
 
 myComponent.addEventListener('my-event', event => {
-  // event is now of type MyComponentCustomEvent, and detail will have the proper type
+  // event is now of type MyComponentCustomEvent, and detail will
+  // have the proper type
   event.detail;
 });
 ```
@@ -35,7 +36,9 @@ This will also allow components to have proper Output binding types in Angular p
 })
 export class AppComponent {
   handleMyEvent(event: MyComponentCustomEvent<string>) {
-    // event is property typed now and can be consumed without needing to type `event` as Event or any then use type assertion to its proper type
+    // event is properly typed now and can be consumed without
+    // needing to type `event` as Event or any then use type assertion
+    // to its proper type
     event.detail;
   }
 }
@@ -102,10 +105,11 @@ export * from './component-event-listeners'; // <-- add this line
 // ...
 ```
 
-You'll get a type error if `component-event-listeners.d.ts` doesn't already exist, so be sure to generate one or put in a place holder like:
+You'll get a type error if `component-event-listeners.d.ts` doesn't already exist, so be sure to generate one or add a placeholder like this one:
 
 ```ts
 /** src/component-event-listeners */
+// Doesn't matter what you export, but this file will need to export/import something something
 export type Placeholder = 'This should be replaced automatically';
 ```
 

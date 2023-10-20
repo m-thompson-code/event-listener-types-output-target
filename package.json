@@ -1,7 +1,7 @@
 {
   "name": "event-listener-types-output-target",
   "private": true,
-  "version": "1.1.0",
+  "version": "1.2.0",
   "main": "index.js",
   "types": "index.d.ts",
   "description": "Event listener types output target for @stencil/core components.",
@@ -41,7 +41,8 @@
     "build": "rimraf ./dist && tsc && npm run copy",
     "start": "node dist/index.js",
     "test": "jest",
-    "test.watch": "jest --watchAll",
+    "test.watch": "jest --watch",
+    "test.watchAll": "jest --watchAll",
     "publish": "npm run test && npm run build && cd dist && npm publish"
   },
   "devDependencies": {
