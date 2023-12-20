@@ -148,7 +148,7 @@ describe('generator', () => {
       `${TABS[1]}interface HTMLFirstCmpElement {`,
       `${TABS[2]}addEventListener<K extends keyof HTMLFirstCmpElementEventMap>(type: K, listener: (this: HTMLFirstCmpElement, ev: FirstCmpCustomEvent<HTMLFirstCmpElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;`,
       `${TABS[2]}addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;`,
-      `${TABS[2]}addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;',`,
+      `${TABS[2]}addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;`,
       `${TABS[2]}addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;`,
       `${TABS[2]}removeEventListener<K extends keyof HTMLFirstCmpElementEventMap>(type: K, listener: (this: HTMLFirstCmpElement, ev: FirstCmpCustomEvent<HTMLFirstCmpElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;`,
       `${TABS[2]}removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;`,
